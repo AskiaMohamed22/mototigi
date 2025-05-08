@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/Components/ink_well_custom.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
-import 'package:com_basoft_customer_ba/Screen/Menu/menu_screen.dart';
+import 'package:mototigi/Components/ink_well_custom.dart';
+import 'package:mototigi/theme/style.dart';
+import 'package:mototigi/Screen/Menu/menu_screen.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:com_basoft_customer_ba/Components/listMenu.dart';
+import 'package:mototigi/Components/listMenu.dart';
 import 'invite_friends.dart';
-import 'package:com_basoft_customer_ba/Screen/MyProfile/edit_profile.dart';
+import 'package:mototigi/Screen/MyProfile/edit_profile.dart';
 
 class SettingsScreen extends StatefulWidget {
   @override

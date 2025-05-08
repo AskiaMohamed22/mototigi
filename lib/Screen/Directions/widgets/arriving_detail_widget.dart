@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/app_router.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/app_router.dart';
+import 'package:mototigi/theme/style.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import 'icon_action_widget.dart';

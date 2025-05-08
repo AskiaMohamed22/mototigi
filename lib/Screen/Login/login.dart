@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/Components/ink_well_custom.dart';
-import 'package:com_basoft_customer_ba/app_router.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
-import 'package:com_basoft_customer_ba/Components/validations.dart';
+import 'package:mototigi/Components/ink_well_custom.dart';
+import 'package:mototigi/app_router.dart';
+import 'package:mototigi/theme/style.dart';
+import 'package:mototigi/Components/validations.dart';
 
 class LoginScreen extends StatefulWidget {
   @override

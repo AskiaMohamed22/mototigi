@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:com_basoft_customer_ba/Components/ink_well_custom.dart';
-import 'package:com_basoft_customer_ba/Components/inputDropdown.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/Components/ink_well_custom.dart';
+import 'package:mototigi/Components/inputDropdown.dart';
+import 'package:mototigi/theme/style.dart';
 import 'package:intl/intl.dart';
 import 'package:image_picker/image_picker.dart';
 

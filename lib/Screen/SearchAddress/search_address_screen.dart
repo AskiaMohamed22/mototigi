@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/Blocs/place_bloc.dart';
-import 'package:com_basoft_customer_ba/Screen/SearchAddress/search_address_view.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/Blocs/place_bloc.dart';
+import 'package:copackage:mototigi/m_basoft_customer_ba/Screen/SearchAddress/search_address_view.dart';
+import 'package:mototigi/theme/style.dart';
 import 'package:provider/provider.dart';
 
 class SearchAddressScreen extends StatelessWidget {

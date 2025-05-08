@@ -7,17 +7,17 @@ part of 'get_routes_request_model.dart';
 // **************************************************************************
 
 GetRoutesRequestModel _$GetRoutesRequestModelFromJson(
-    Map<String, dynamic> json) {
-  return GetRoutesRequestModel(
+        Map<String, dynamic> json) =>
+    GetRoutesRequestModel(
       origin: json['origin'] as String,
       destination: json['destination'] as String,
-      mode: json['mode'] as String, fromLocation: null, toLocation: null);
-}
+      mode: json['mode'] as String? ?? 'driving',
+    );
 
 Map<String, dynamic> _$GetRoutesRequestModelToJson(
         GetRoutesRequestModel instance) =>
     <String, dynamic>{
       'origin': instance.origin,
       'destination': instance.destination,
-      'mode': instance.mode
+      'mode': instance.mode,
     };

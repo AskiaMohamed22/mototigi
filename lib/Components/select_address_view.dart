@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/theme/style.dart';
 
 class SelectAddress extends StatefulWidget {
-  final String? fromAddress,toAddress;
+  final String? fromAddress, toAddress;
   final VoidCallback? onTap;
+  
   SelectAddress({
     this.fromAddress,
     this.toAddress,
-    this.onTap
+    this.onTap,
   });
 
   @override
@@ -19,8 +20,8 @@ class _SelectAddressState extends State<SelectAddress> {
   List<Map<String, dynamic>> listAddress = [
     {"id": 1, "title": "San Antonio"},
     {"id": 2, "title": "Los Angeles"},
-    {"id": 3,"title": "Mt San Antonio"},
-    {"id": 4,"title": "Simi Valley"},
+    {"id": 3, "title": "Mt San Antonio"},
+    {"id": 4, "title": "Simi Valley"},
   ];
 
   Widget getOption() {
@@ -28,13 +29,13 @@ class _SelectAddressState extends State<SelectAddress> {
       shrinkWrap: true,
       scrollDirection: Axis.horizontal,
       itemCount: listAddress.length,
-      itemBuilder: (BuildContext context,int index){
+      itemBuilder: (BuildContext context, int index) {
         return Padding(
           padding: const EdgeInsets.all(3.0),
           child: ChoiceChip(
             key: ValueKey<String>(listAddress[index]['id'].toString()),
             labelStyle: TextStyle(
-                color: whiteColor
+              color: whiteColor,
             ),
             backgroundColor: whiteColor,
             selectedColor: primaryColor,
@@ -43,17 +44,23 @@ class _SelectAddressState extends State<SelectAddress> {
               borderRadius: BorderRadius.circular(20.0),
             ),
             selected: selectedAddress == listAddress[index]['id'].toString(),
-            label: Text(listAddress[index]['title'],
+            label: Text(
+              listAddress[index]['title'],
               style: TextStyle(
-                color: selectedAddress == listAddress[index]['id'].toString() ? whiteColor : blackColor
+                color: selectedAddress == listAddress[index]['id'].toString()
+                    ? whiteColor
+                    : blackColor,
               ),
             ),
             onSelected: (bool check) {
               widget?.onTap!();
-//              setState(() {
-//                selectedAddress = check ? listAddress[index]["id"].toString() : '';
-//              });
-            })
+              setState(() {
+                selectedAddress = check
+                    ? listAddress[index]["id"].toString()
+                    : '';
+              });
+            },
+          ),
         );
       },
     );
@@ -67,7 +74,7 @@ class _SelectAddressState extends State<SelectAddress> {
         borderRadius: BorderRadius.all(Radius.circular(8.0)),
       ),
       child: Container(
-        padding: EdgeInsets.only(top: 10,bottom: 10),
+        padding: EdgeInsets.only(top: 10, bottom: 10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(8.0)),
         ),
@@ -89,7 +96,10 @@ class _SelectAddressState extends State<SelectAddress> {
                         width: 1.0,
                         color: Colors.grey,
                       ),
-                      Icon(Icons.location_on,color: redColor,)
+                      Icon(
+                        Icons.location_on,
+                        color: redColor,
+                      ),
                     ],
                   ),
                 ),
@@ -108,11 +118,9 @@ class _SelectAddressState extends State<SelectAddress> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text("PICKUP",
-                                style: TextStyle(
-                                  fontSize: 10,
-                                  color: Colors.grey
-                                ),
+                              Text(
+                                "PICKUP",
+                                style: TextStyle(fontSize: 10, color: Colors.grey),
                               ),
                               Text(
                                 widget.fromAddress ?? '',
@@ -124,8 +132,10 @@ class _SelectAddressState extends State<SelectAddress> {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.only(top: 5,bottom: 5),
-                        child: Divider(color: Colors.grey,)
+                        padding: EdgeInsets.only(top: 5, bottom: 5),
+                        child: Divider(
+                          color: Colors.grey,
+                        ),
                       ),
                       GestureDetector(
                         onTap: widget.onTap,
@@ -135,11 +145,9 @@ class _SelectAddressState extends State<SelectAddress> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
-                              Text("DROP-OFF",
-                                style: TextStyle(
-                                    fontSize: 10,
-                                    color: Colors.grey
-                                ),
+                              Text(
+                                "DROP-OFF",
+                                style: TextStyle(fontSize: 10, color: Colors.grey),
                               ),
                               Text(
                                 widget.toAddress ?? '',
@@ -159,13 +167,13 @@ class _SelectAddressState extends State<SelectAddress> {
               child: Container(
                 padding: EdgeInsets.only(left: 10),
                 child: NotificationListener<OverscrollIndicatorNotification>(
-                  onNotification: (overScroll) {
-                    overScroll.disallowGlow();
+                  onNotification: (overscroll) {
+                    overscroll.disallowIndicator(); // Correct method usage
                     return false;
                   },
-                  child: getOption()
-                )
-              )
+                  child: getOption(),
+                ),
+              ),
             )
           ],
         ),

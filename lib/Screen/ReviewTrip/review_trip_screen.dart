@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/Components/ink_well_custom.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/Components/ink_well_custom.dart';
+import 'package:mototigi/theme/style.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 

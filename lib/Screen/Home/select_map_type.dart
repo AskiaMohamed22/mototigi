@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/Model/map_type_model.dart';
+import 'package:mototigi/Model/map_type_model.dart';
 
 class SelectMapTypeView extends StatelessWidget {
   final MapTypeModel _item;

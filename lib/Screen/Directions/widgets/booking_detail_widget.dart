@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/theme/style.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 

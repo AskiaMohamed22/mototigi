@@ -1,8 +1,8 @@
 //import 'dart:async';
 //import 'package:dio/dio.dart';
 //import 'package:flutter/material.dart';
-//import 'package:com_basoft_customer_ba/Model/place_model.dart';
-//import 'package:com_basoft_customer_ba/config.dart';
+//import 'package:mototigi/Model/place_model.dart';
+//import 'package:com_baspackage:mototigi/oft_customer_ba/config.dart';
 //
 //class PlaceBloc with ChangeNotifier {
 //  StreamController<Place> locationController = StreamController<Place>.broadcast();

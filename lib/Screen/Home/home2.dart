@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/theme/style.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:io' show Platform;
-import 'package:com_basoft_customer_ba/Screen/Menu/menu_screen.dart';
+import 'package:mototigi/Screen/Menu/menu_screen.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:flutter/services.dart';
 import 'dart:math' show cos, sqrt, asin;

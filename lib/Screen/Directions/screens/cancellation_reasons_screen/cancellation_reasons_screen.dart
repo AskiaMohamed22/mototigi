@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/app_router.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
-import 'package:grouped_buttons/grouped_buttons.dart';
+import 'package:mototigi/app_router.dart';
+import 'package:mototigi/theme/style.dart';
+import 'package:group_button/group_button.dart';
 
 class CancellationReasonsScreen extends StatefulWidget {
   @override
@@ -9,60 +9,73 @@ class CancellationReasonsScreen extends StatefulWidget {
 }
 
 class _CancellationReasonsScreenState extends State<CancellationReasonsScreen> {
+  String? selectedReason;
+
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
+
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: whiteColor,
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: const Text('Raison d\'annulation', style: TextStyle(color: Colors.black)),
       ),
       bottomNavigationBar: Container(
-        padding: EdgeInsets.only(left: 20.0,right: 20.0, bottom: 20.0),
-        child: ButtonTheme(
-          height: 50.0,
-          minWidth: MediaQuery.of(context).size.width-50,
-          child: TextButton(
-            // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
-            // elevation: 0.0,
-            // color: primaryColor,
-            // icon: Text(''),
-            // label: Text('Submit', style: headingWhite,
-            // ),
-            onPressed: (){
-              Navigator.of(context).pushReplacementNamed(AppRoute.homeScreen);
-            }, child: Text('Submit', style: headingWhite,
-          ),
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20.0),
+        child: SizedBox(
+          width: double.infinity,
+          height: 50,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: primaryColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(15.0),
+              ),
+            ),
+            onPressed: selectedReason != null
+                ? () {
+                    Navigator.of(context).pushReplacementNamed(AppRoute.homeScreen);
+                  }
+                : null,
+            child:  Text('Valider', style: headingWhite),
           ),
         ),
       ),
-      body: Container(
-        padding: EdgeInsets.only(left: 20, right: 20),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
           children: <Widget>[
-            Container(
-              padding: EdgeInsets.only(top: 50),
-              child: Text("Please select the reason for cancellation:",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold
-                ),
-                maxLines: 2,
-              )
+            const SizedBox(height: 50),
+            const Text(
+              "Veuillez sélectionner la raison de l'annulation :",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+              maxLines: 2,
             ),
-            SizedBox(height: screenSize.height*0.08,),
-            RadioButtonGroup(
-              activeColor: primaryColor,
-                labelStyle: TextStyle(
-                  fontSize: 15,
-                ),
-                labels: <String>[
-                  "I don’t want to share",
-                  "Can't contact the driver",
-                  "The price is not reasonable",
-                  "Pickup address is incorrect",
-                ],
-                onSelected: (String selected) => print(selected)
+            SizedBox(height: screenSize.height * 0.08),
+            GroupButton(
+              buttons: const [
+                "Je ne souhaite pas partager",
+                "Impossible de contacter le chauffeur",
+                "Le prix n'est pas raisonnable",
+                "Adresse incorrecte",
+              ],
+              onSelected: (index, isSelected) {
+                setState(() => selectedReason = isSelected ? const [
+                      "Je ne souhaite pas partager",
+                      "Impossible de contacter le chauffeur",
+                      "Le prix n'est pas raisonnable",
+                      "Adresse incorrecte",
+                    ][index] : null);
+              },
+              options: GroupButtonOptions(
+                selectedColor: primaryColor,
+                unselectedTextStyle: const TextStyle(fontSize: 15),
+              ),
             ),
           ],
         ),

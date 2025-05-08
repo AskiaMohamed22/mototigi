@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/Screen/Directions/screens/chat_screen/bubble_chat_widget.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/Screen/Directions/screens/chat_screen/bubble_chat_widget.dart';
+import 'package:mototigi/theme/style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ChatWidget extends StatelessWidget {

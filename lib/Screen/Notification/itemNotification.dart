@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/theme/style.dart';
 
 class ItemNotification extends StatelessWidget {
   final IconData icon;

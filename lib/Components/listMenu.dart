@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/theme/style.dart';
 
 class ListsMenu extends StatelessWidget {
   final String? title;

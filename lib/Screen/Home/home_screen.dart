@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/Blocs/place_bloc.dart';
+import 'package:mototigi/Blocs/place_bloc.dart';
 import 'package:provider/provider.dart';
 
 import 'home_view.dart';

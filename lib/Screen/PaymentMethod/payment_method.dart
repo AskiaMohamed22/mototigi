@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:com_basoft_customer_ba/Screen/Menu/menu_screen.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/Screen/Menu/menu_screen.dart';
+import 'package:mototigi/theme/style.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PaymentMethodScreen extends StatefulWidget {

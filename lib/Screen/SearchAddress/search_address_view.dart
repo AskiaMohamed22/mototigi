@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/Blocs/place_bloc.dart';
-import 'package:com_basoft_customer_ba/Screen/Directions/direction_screen.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/Blocs/place_bloc.dart';
+import 'package:mototigi/Screen/Directions/direction_screen.dart';
+import 'package:mototigi/theme/style.dart';
 
 class SearchAddressView extends StatefulWidget {
   final PlaceBloc? placeBloc;

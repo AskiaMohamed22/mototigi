@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/Screen/MyProfile/profile.dart';
-import 'package:com_basoft_customer_ba/app_router.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/Screen/MyProfile/profile.dart';
+import 'package:mototigi/app_router.dart';
+import 'package:mototigi/theme/style.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class MenuItems {

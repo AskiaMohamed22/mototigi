@@ -5,35 +5,56 @@ import '../../data/equatable.dart';
 
 part 'get_routes_request_model.g.dart';
 
-@JsonSerializable(nullable: true)
+@JsonSerializable()
 class GetRoutesRequestModel extends Equatable {
   @JsonKey(ignore: true)
   LatLng? fromLocation;
+
   @JsonKey(name: 'origin')
   String origin;
 
   @JsonKey(ignore: true)
   LatLng? toLocation;
+
   @JsonKey(name: 'destination')
   String destination;
 
-  @JsonKey(name: 'mode')
-  String mode;
+  @JsonKey(name: 'mode', includeIfNull: false)
+  final String mode;
 
-  GetRoutesRequestModel({required this.fromLocation, required this.origin, required this.toLocation, required this.destination, this.mode = "driving"}) : super([origin, destination, mode]){
-    if(origin == null && fromLocation != null){
-      origin = "${fromLocation?.latitude},${fromLocation?.longitude}";
+  GetRoutesRequestModel({
+    this.fromLocation,
+    required this.origin,
+    this.toLocation,
+    required this.destination,
+    this.mode = 'driving',
+  }) : super([origin, destination, mode]) {
+    // Si origin vide et fromLocation défini, génère origin
+    if (origin.isEmpty && fromLocation != null) {
+      origin = '${fromLocation!.latitude},${fromLocation!.longitude}';
     }
-    if(destination == null && toLocation != null){
-      destination = "${toLocation?.latitude},${toLocation?.longitude}";
+    // Si fromLocation non défini mais origin présent, parse LatLng
+    else if (fromLocation == null && origin.contains(',')) {
+      final parts = origin.split(',');
+      if (parts.length == 2) {
+        fromLocation = LatLng(
+          double.parse(parts[0]),
+          double.parse(parts[1]),
+        );
+      }
     }
-    if(origin != null && fromLocation == null){
-      final data = origin.split(',');
-      if(data.length == 2) fromLocation = LatLng(double.parse(data[0]), double.parse(data[1]));
-    }
-    if(destination != null && toLocation == null){
-      final data = destination.split(',');
-      if(data.length == 2) toLocation = LatLng(double.parse(data[0]), double.parse(data[1]));
+
+    // Même logique pour destination ↔ toLocation
+    if (destination.isEmpty && toLocation != null) {
+      destination = '${toLocation!.latitude},${toLocation!.longitude}';
+    } else if (toLocation == null && destination.contains(',')) {
+      final parts = destination.split(',');
+      if (parts.length == 2) {
+        toLocation = LatLng(
+          double.parse(parts[0]),
+          double.parse(parts[1]),
+        );
+      }
     }
   }
 

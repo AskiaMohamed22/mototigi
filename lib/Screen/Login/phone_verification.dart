@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/Components/ink_well_custom.dart';
-import 'package:com_basoft_customer_ba/app_router.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
+import 'package:mototigi/Components/ink_well_custom.dart';
+import 'package:mototigi/app_router.dart';
+import 'package:mototigi/theme/style.dart';
 import 'package:pin_code_text_field/pin_code_text_field.dart';
 
 class PhoneVerification extends StatefulWidget {

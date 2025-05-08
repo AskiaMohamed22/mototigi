@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:com_basoft_customer_ba/theme/style.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:mototigi/theme/style.dart';
+import 'package:card_swiper/card_swiper.dart';
 import 'package:permission_handler/permission_handler.dart';
 import '../../app_router.dart';
 
