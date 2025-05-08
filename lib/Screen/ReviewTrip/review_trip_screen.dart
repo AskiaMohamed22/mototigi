@@ -63,7 +63,7 @@ class _ReviewTripScreenState extends State<ReviewTripScreen> {
       ),
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (overScroll) {
-          overScroll.disallowGlow();
+          overScroll.disallowIndicator();
           return false;
         },
         child: SingleChildScrollView(

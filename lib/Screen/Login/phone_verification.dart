@@ -84,7 +84,7 @@ class _PhoneVerificationState extends State<PhoneVerification> {
 
                         child: Text('VERIFY NOW', style: headingWhite,),
                         style: TextButton.styleFrom(
-                          primary: Colors.blue,
+                          foregroundColor: Colors.blue,
                         ),
                         // style: TextStyle(color: primaryColor),
                         onPressed: (){

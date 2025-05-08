@@ -126,7 +126,7 @@ class _NotificationScreensState extends State<NotificationScreens> {
       body: listNotification.length != 0
         ? NotificationListener<OverscrollIndicatorNotification>(
             onNotification: (overScroll) {
-              overScroll.disallowGlow();
+              overScroll.disallowIndicator();
               return false;
             },
             child: AnimationLimiter(

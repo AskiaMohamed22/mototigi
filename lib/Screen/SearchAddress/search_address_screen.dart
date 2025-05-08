@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mototigi/Blocs/place_bloc.dart';
-import 'package:copackage:mototigi/m_basoft_customer_ba/Screen/SearchAddress/search_address_view.dart';
+import 'package:mototigi/Screen/SearchAddress/search_address_view.dart';
 import 'package:mototigi/theme/style.dart';
 import 'package:provider/provider.dart';
 
@@ -22,7 +22,7 @@ class SearchAddressScreen extends StatelessWidget {
       ),
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (overScroll) {
-          overScroll.disallowGlow();
+          overScroll.disallowIndicator();
           return false;
         },
         child: SearchAddressView(

@@ -67,7 +67,7 @@ class _DirectionsViewState extends State<DirectionsView> {
       final idFrom = MarkerId("from_address");
       markers[idFrom] = Marker(
         markerId: idFrom,
-        position: LatLng(from.lat, from.lng),
+        position: LatLng(from.lat ?? 0.0, from.lng ?? 0.0),
         infoWindow: InfoWindow(title: from.name, snippet: from.formattedAddress),
       );
     }
@@ -76,7 +76,7 @@ class _DirectionsViewState extends State<DirectionsView> {
       final idTo = MarkerId("to_address");
       markers[idTo] = Marker(
         markerId: idTo,
-        position: LatLng(to.lat, to.lng),
+        position: LatLng(to.lat ?? 0.0, to.lng ?? 0.0),
         infoWindow: InfoWindow(title: to.name, snippet: to.formattedAddress),
       );
     }
@@ -96,8 +96,8 @@ class _DirectionsViewState extends State<DirectionsView> {
     try {
       final resp = await apis.getRoutes(
         getRoutesRequest: GetRoutesRequestModel(
-          fromLocation: LatLng(from.lat, from.lng),
-          toLocation: LatLng(to.lat, to.lng),
+          fromLocation: LatLng(from.lat ?? 0.0, from.lng ?? 0.0),
+          toLocation: LatLng(to.lat ?? 0.0, to.lng ?? 0.0),
           mode: "driving",
           origin: '',
           destination: '',
@@ -112,14 +112,14 @@ class _DirectionsViewState extends State<DirectionsView> {
       polyLines[polyId] = GMapViewHelper.createPolyline(
         polylineIdVal: pid,
         router: points,
-        formLocation: LatLng(from.lat, from.lng),
-        toLocation: LatLng(to.lat, to.lng),
+        formLocation: LatLng(from.lat ?? 0.0, from.lng ?? 0.0),
+        toLocation: LatLng(to.lat ?? 0.0, to.lng ?? 0.0),
       );
 
       setState(() {});
       _gMapViewHelper.cameraMove(
-        fromLocation: LatLng(from.lat, from.lng),
-        toLocation: LatLng(to.lat, to.lng),
+        fromLocation: LatLng(from.lat ?? 0.0, from.lng ?? 0.0),
+        toLocation: LatLng(to.lat ?? 0.0, to.lng ?? 0.0),
         mapController: _mapController!,
       );
     } catch (e) {
@@ -183,7 +183,7 @@ class _DirectionsViewState extends State<DirectionsView> {
   Widget build(BuildContext context) {
     final start = widget.placeBloc.formLocation;
     final initial = start != null
-        ? LatLng(start.lat, start.lng)
+        ? LatLng(start.lat ?? 0.0, start.lng ?? 0.0)
         : const LatLng(0.0, 0.0);
 
     return Scaffold(

@@ -117,7 +117,7 @@ class _IntroScreenState extends State<IntroScreen> with TickerProviderStateMixin
                 child: TextButton(
                   // shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
                   style: TextButton.styleFrom(
-                    primary: Colors.blue,
+                    foregroundColor: Colors.blue,
                   ),
                   child: Text('Continue To App',
                     style: TextStyle(

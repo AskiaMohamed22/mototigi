@@ -69,7 +69,7 @@ class _HistoryDetailState extends State<HistoryDetail> {
         },
         body: NotificationListener<OverscrollIndicatorNotification>(
           onNotification: (overScroll) {
-            overScroll.disallowGlow();
+            overScroll.disallowIndicator();
             return false;
           },
           child: SingleChildScrollView(

@@ -51,7 +51,7 @@ class MenuScreens extends StatelessWidget {
             child: Expanded(
               child: NotificationListener<OverscrollIndicatorNotification>(
                 onNotification: (overScroll) {
-                  overScroll.disallowGlow();
+                  overScroll.disallowIndicator();
                     return false;
                   },
                 child: ListView(

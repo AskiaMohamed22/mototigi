@@ -29,7 +29,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       drawer: MenuScreens(activeScreenName: screenName),
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (overScroll) {
-          overScroll.disallowGlow();
+          overScroll.disallowIndicator();
           return false;
         },
         child: SingleChildScrollView(

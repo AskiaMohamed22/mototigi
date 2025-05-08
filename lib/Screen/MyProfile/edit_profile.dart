@@ -141,7 +141,7 @@ class _EditProfileState extends State<EditProfile> {
       body: Scrollbar(
         child: NotificationListener<OverscrollIndicatorNotification>(
             onNotification: (overScroll) {
-              overScroll.disallowGlow();
+              overScroll.disallowIndicator();
             return false;
           },
           child: SingleChildScrollView(

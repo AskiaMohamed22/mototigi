@@ -44,7 +44,7 @@ class _HistoryScreenState extends State<HistoryScreen> {
         },
         body: NotificationListener<OverscrollIndicatorNotification>(
           onNotification: (overScroll) {
-            overScroll.disallowGlow();
+            overScroll.disallowIndicator();
             return false;
           },
           child: ListView.separated(

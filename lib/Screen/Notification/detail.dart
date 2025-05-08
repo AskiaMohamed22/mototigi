@@ -55,7 +55,7 @@ class _NotificationDetailState extends State<NotificationDetail> {
       ),
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (overScroll) {
-          overScroll.disallowGlow();
+          overScroll.disallowIndicator();
           return false;
         },
         child: SingleChildScrollView(

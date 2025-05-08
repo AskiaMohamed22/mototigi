@@ -14,7 +14,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: appTheme?.backgroundColor,
+        backgroundColor: appTheme.scaffoldBackgroundColor,
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.mode_edit),
@@ -31,12 +31,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
       body: NotificationListener<OverscrollIndicatorNotification>(
         onNotification: (overScroll) {
-          overScroll.disallowGlow();
+          overScroll.disallowIndicator();
           return false;
         },
         child: SingleChildScrollView(
           child: Container(
-            color: appTheme?.backgroundColor,
+            color: appTheme.scaffoldBackgroundColor,
             child: Column(
               children: <Widget>[
                 Center(

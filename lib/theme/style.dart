@@ -91,22 +91,24 @@ final ThemeData base = ThemeData.light();
 
 ThemeData appTheme = ThemeData(
   primaryColor: primaryColor,
-  buttonColor: primaryColor,
+  colorScheme: base.colorScheme.copyWith(
+    primary: primaryColor,
+    secondary: const Color(0xFF13B9FD),
+    background: Colors.white,
+    error: const Color(0xFFB00020),
+  ),
   indicatorColor: Colors.white,
   splashColor: Colors.white24,
   splashFactory: InkRipple.splashFactory,
-  accentColor: const Color(0xFF13B9FD),
   canvasColor: Colors.white,
   scaffoldBackgroundColor: Colors.white,
-  backgroundColor: Colors.white,
-  errorColor: const Color(0xFFB00020),
   iconTheme: IconThemeData(color: primaryColor),
   buttonTheme: const ButtonThemeData(
     textTheme: ButtonTextTheme.primary,
   ),
   textTheme: _buildTextTheme(base.textTheme),
   primaryTextTheme: _buildTextTheme(base.primaryTextTheme),
-  accentTextTheme: _buildTextTheme(base.accentTextTheme),
+  // Removed invalid parameter 'secondaryTextTheme'
 
 );
 
